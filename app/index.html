@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html ng-app="starterApp" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Starter</title>
+  
+  <!-- build:css -->
+  <link rel="stylesheet" href="/dist/styles.css">
+  <!--endbuild-->
+    
+</head>
+
+<body>
+  <h1>{{"Hello from Angular!"}}</h1>
+  
+  <div ng-controller="mainCtrl as main">
+    <p>{{main.message}}</p>
+  </div>
+  
+  <!-- build:lib-js-angular -->
+  <script src="/lib/angular-1.4.8.js"></script>
+  <!--endbuild-->
+  
+  <!-- build:app-js -->
+  <!-- app -->
+  <script src="/scripts/app.js"></script>
+
+  <!-- controllers, etc -->
+  
+  <!-- livereload -->  
+  <script src="http://localhost:35729/livereload.js"></script>
+  <!--endbuild-->
+  
+</body>
+</html>

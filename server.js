@@ -1,11 +1,17 @@
-var StaticServer = require('static-server');
+module.exports = function(){
 
-var server = new StaticServer({
-  rootPath: './public/',
-  port: 3000
-});
+  var StaticServer = require('static-server');
+  var PATH = arguments[0] || './app';
 
-server.start(function(){
-  console.log('Server started on port ' + server.port);
-});
+  var server = new StaticServer({
+    rootPath: PATH,
+    port: 3000
+  });
+
+  server.start(function(){
+    console.log('Server started on port ' + server.port + ' ... path: ' + server.rootPath);
+  });
+  
+};
+
 
