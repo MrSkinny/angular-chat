@@ -1,0 +1,17 @@
+<div class="list-group">
+  <div ng-repeat="room in roomsCtrl.allRooms">
+    <div class="list-group-item">
+      {{room.name}}
+    </div>
+  </div>
+</div>
+
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon">Name: </span>
+      <input type="text" class="form-control" ng-model="roomsCtrl.newRoomName" />
+    </div>
+    <button type="submit" id="new-room" ng-click="roomsCtrl.createRoom(roomsCtrl.newRoomName)" class="btn btn-primary">Create Room</button>
+  </div>
+</form>

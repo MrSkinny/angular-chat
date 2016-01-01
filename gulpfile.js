@@ -15,6 +15,7 @@ var rename = require('gulp-rename');
 var DIST_PATH = 'app/dist';
 var DEBUG_SOURCE_PATH = 'app/src/**/*.js';
 var DEBUG_SCRIPTS_PATH = 'app/scripts';
+var HTML_PATHS = ['app/index.html', 'app/templates/**/*.html'];
 var STYLES_PATH = 'app/css/**/*.css';
 
 // HTML - asset pipeline!
@@ -113,9 +114,8 @@ gulp.task('watch', function(){
 
   gulp.watch(DEBUG_SOURCE_PATH, ['debug-scripts', 'prod-scripts']);
   gulp.watch('app/scss/**/*.scss', ['styles']);
-  gulp.watch('app/index.html', function(){
-    console.log('index.html changed');
-    gulp.src('app/index.html').pipe(livereload());
+  gulp.watch(HTML_PATHS, function(){
+    gulp.src(HTML_PATHS).pipe(livereload());
   });
 });
 

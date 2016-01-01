@@ -1,9 +1,23 @@
 (function(){
-  function config(){
+  function config($stateProvider, $locationProvider){
+
+		$locationProvider
+			.html5Mode({
+				enabled: true,
+				requireBase: false
+			});
+
+		$stateProvider
+			.state('main', {
+				url: '/',
+				controller: 'MainCtrl as main',
+				templateUrl: '/templates/main.html'
+			});
+
+	}
+
+	angular
+		.module('dialogg', ['ui.router', 'firebase'])
+		.config(config);
     
-  }  
-  
-angular.module('starterApp', ['ui.router'])
-  .config(config);
-  
 }());

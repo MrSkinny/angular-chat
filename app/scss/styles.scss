@@ -1,23 +1,2 @@
 @import "./reset/basic-reset";
 
-$gray: #f7f7f7;
-
-body {
-  background: $gray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
-img {
-  margin-bottom: 4rem;  
-}
-
-h1, p {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
