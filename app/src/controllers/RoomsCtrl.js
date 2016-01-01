@@ -1,5 +1,5 @@
 (function(){
-  function RoomsCtrl(RoomFactory){
+  function RoomsCtrl($uibModal, RoomFactory){
     this.allRooms = RoomFactory.all;
     
     this.createRoom = function(room){
@@ -10,7 +10,7 @@
   
   angular
     .module('dialogg')
-    .controller('RoomsCtrl', ['RoomFactory', RoomsCtrl]);
+    .controller('RoomsCtrl', ['$uibModal', 'RoomFactory', RoomsCtrl]);
 
 }());
 

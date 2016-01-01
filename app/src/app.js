@@ -17,7 +17,7 @@
 	}
 
 	angular
-		.module('dialogg', ['ui.router', 'firebase'])
+		.module('dialogg', ['ui.router', 'ui.bootstrap', 'firebase'])
 		.config(config);
     
 }());
