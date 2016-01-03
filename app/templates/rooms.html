@@ -1,19 +1,16 @@
-<h3>Rooms</h3>
+<h3>All Rooms</h3>
 
 <div class="list-group">
   <div ng-repeat="room in roomsCtrl.allRooms">
-    <div class="list-group-item">
-      {{room.name}}
-    </div>
+    <a ui-sref="main.room({id: room.$id})">
+      <div class="list-group-item">
+        {{room.name}}
+      </div>
+    </a>
   </div>
 </div>
 
-<form class="form-inline">
-  <div class="form-group">
-    <div class="input-group">
-      <span class="input-group-addon">Name: </span>
-      <input type="text" class="form-control" ng-model="roomsCtrl.newRoomName" />
-    </div>
-    <button type="submit" id="new-room" ng-click="roomsCtrl.createRoom(roomsCtrl.newRoomName)" class="btn btn-primary">Create Room</button>
-  </div>
-</form>
+
+<div>
+    <button type="button" class="btn btn-primary" ng-click="roomsCtrl.openModal()">Create New Room</button>
+</div>

@@ -15,6 +15,8 @@
 </head>
 
 <body>
+  <a ui-sref="main">Home</a> |
+  <a ui-sref="main.room({id: 1})">Room</a>
   <ui-view></ui-view>
   
   <!-- build:lib-js-angular -->
@@ -40,6 +42,8 @@
   <!-- controllers -->
   <script src="/scripts/controllers/MainCtrl.js"></script>
   <script src="/scripts/controllers/RoomsCtrl.js"></script>
+  <script src="/scripts/controllers/RoomCtrl.js"></script>
+  <script src="/scripts/controllers/modals/RoomModalCtrl.js"></script>
   
   <!-- services -->
   <script src="/scripts/services/RoomFactory.js"></script>

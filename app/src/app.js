@@ -1,23 +1,26 @@
 (function(){
-  function config($stateProvider, $locationProvider){
-
-		$locationProvider
-			.html5Mode({
-				enabled: true,
-				requireBase: false
-			});
+  function config($stateProvider, $urlRouterProvider){
 
 		$stateProvider
 			.state('main', {
-				url: '/',
+				url: '',
 				controller: 'MainCtrl as main',
-				templateUrl: '/templates/main.html'
-			});
+				templateUrl: '/templates/main.html',
+			})
+      
+      .state('main.room', {
+        url: 'room/:id',
+        controller: 'RoomCtrl as roomCtrl',
+        templateUrl: '/templates/room.html'
+      });
+      
+      
+      
 
 	}
 
 	angular
 		.module('dialogg', ['ui.router', 'ui.bootstrap', 'firebase'])
-		.config(config);
+		.config(['$stateProvider','$urlRouterProvider', config]);
     
 }());
