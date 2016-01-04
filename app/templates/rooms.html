@@ -1,12 +1,10 @@
-<h3>All Rooms</h3>
+<h3>This is All Rooms</h3>
 
 <div class="list-group">
   <div ng-repeat="room in roomsCtrl.allRooms">
-    <a ui-sref="main.room({id: room.$id})">
-      <div class="list-group-item">
-        {{room.name}}
-      </div>
-    </a>
+    <div class="list-group-item">
+      <a href="" ng-click="roomsCtrl.changeRoom(room.$id)">{{room.name}}</a>
+    </div>
   </div>
 </div>
 

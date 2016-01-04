@@ -1,1 +1,4 @@
-Room: {{ roomCtrl.id }}
+<div ng-if="roomCtrl.id">
+  Room in Template: {{roomCtrl.id}}
+  <room-messages room-id="roomCtrl.id"></room-messages>
+</div>

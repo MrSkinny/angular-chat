@@ -1,12 +1,13 @@
 (function(){
-  function MainCtrl(){
+  function MainCtrl($scope, $routeParams){
     
+    $scope.params = $routeParams;
     
   }
   
   angular
     .module('dialogg')
-    .controller('MainCtrl', [MainCtrl]);
+    .controller('MainCtrl', ['$scope', '$routeParams', MainCtrl]);
 
 }());
 

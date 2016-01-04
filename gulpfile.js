@@ -46,8 +46,7 @@ gulp.task('styles', function(){
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIST_PATH))
-    .pipe(gulp.dest('.'))
-    .pipe(livereload());
+    .pipe(gulp.dest('.'));
 });
 
 // Debug Scripts
@@ -63,8 +62,7 @@ gulp.task('debug-scripts', function(){
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(gulp.dest(DEBUG_SCRIPTS_PATH))
-    .pipe(livereload());
+    .pipe(gulp.dest(DEBUG_SCRIPTS_PATH));
 });
 
 // Prod Scripts
@@ -109,14 +107,14 @@ gulp.task('watch', function(){
   gulp.start('styles');
   gulp.start('debug-scripts');
 
-  require('./server.js')();
-  livereload.listen({port: 35729, host: 'localhost'});
+  // require('./server.js')();
+  // livereload.listen({port: 35729, host: 'localhost'});
 
   gulp.watch(DEBUG_SOURCE_PATH, ['debug-scripts', 'prod-scripts']);
   gulp.watch('app/scss/**/*.scss', ['styles']);
-  gulp.watch(HTML_PATHS, function(){
-    gulp.src(HTML_PATHS).pipe(livereload());
-  });
+  // gulp.watch(HTML_PATHS, function(){
+  //   gulp.src(HTML_PATHS).pipe(livereload());
+  // });
 });
 
 // Copy images

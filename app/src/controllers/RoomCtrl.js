@@ -1,13 +1,14 @@
 (function(){
-  function RoomCtrl($stateParams){
-    this.id = $stateParams.id;
+  function RoomCtrl($scope, $routeParams){
+    var ctrl = this;
     
+    ctrl.id = $routeParams.id;
     
   }
   
   angular
     .module('dialogg')
-    .controller('RoomCtrl', ['$stateParams', RoomCtrl]);
+    .controller('RoomCtrl', ['$scope', '$routeParams', RoomCtrl]);
 
 }());
 

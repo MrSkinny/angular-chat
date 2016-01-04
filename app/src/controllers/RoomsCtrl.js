@@ -1,5 +1,5 @@
 (function(){
-  function RoomsCtrl($uibModal, RoomFactory){
+  function RoomsCtrl($scope, $uibModal, $location, RoomFactory){
     var roomsCtrl = this;
     
     this.allRooms = RoomFactory.all;
@@ -24,11 +24,17 @@
       
     };
     
+    this.changeRoom = function(roomId){
+      console.log('clicked room - ' + roomId);
+      $scope.$emit('user-changed-room', roomId);
+      $location.path('/room/' + roomId);
+    };
+    
   }
   
   angular
     .module('dialogg')
-    .controller('RoomsCtrl', ['$uibModal', 'RoomFactory', RoomsCtrl]);
+    .controller('RoomsCtrl', ['$scope', '$uibModal', '$location', 'RoomFactory', RoomsCtrl]);
 
 }());
 

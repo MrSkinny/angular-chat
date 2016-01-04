@@ -5,6 +5,13 @@
   </div>
   
   <div class="col-md-9 col-xs-9">
-    <div ui-view></div>
+    <p>
+      {{ params }}
+    </p>
+      
+    <div ng-include="'templates/room.html'" ng-controller="RoomCtrl as roomCtrl"></div>
   </div>
 </div>
+
+
+
