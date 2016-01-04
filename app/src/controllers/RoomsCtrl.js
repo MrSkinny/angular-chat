@@ -25,8 +25,6 @@
     };
     
     this.changeRoom = function(roomId){
-      console.log('clicked room - ' + roomId);
-      $scope.$emit('user-changed-room', roomId);
       $location.path('/room/' + roomId);
     };
     

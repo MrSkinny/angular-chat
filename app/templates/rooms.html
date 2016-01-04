@@ -3,7 +3,7 @@
 <div class="list-group">
   <div ng-repeat="room in roomsCtrl.allRooms">
     <div class="list-group-item">
-      <a href="" ng-click="roomsCtrl.changeRoom(room.$id)">{{room.name}}</a>
+      <a ng-href="#/room/{{room.$id}}">{{room.name}}</a>
     </div>
   </div>
 </div>
