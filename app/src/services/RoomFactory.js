@@ -12,7 +12,7 @@
         rooms.$add({name: roomId});
       },
       
-      listMessages: function(roomId){
+      listMessages: function(roomId=""){
         return $firebaseArray(firebaseRef.child('messages').orderByChild('roomId').equalTo(roomId));
       }
     }
