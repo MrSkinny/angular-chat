@@ -1,0 +1,18 @@
+        <div class="modal-header">
+            <h3 class="modal-title">Who Are Ya?</h3>
+        </div>
+        <form name="usernameModal">
+          <div class="modal-body">
+              Choose your username: 
+              <input type="text" name="username" required="string" ng-minlength="4" ng-model="modal.username" />
+              <p ng-hide="usernameModal.username.$valid" class="modal-error">
+                (Must be at least 4 characters)
+              </p>
+          </div>
+          <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" type="button" ng-click="modal.ok()">OK</button>
+          </div>
+        </form>
+        
+        
+        

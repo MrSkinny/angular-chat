@@ -1,5 +1,5 @@
 (function(){
-  function RoomsCtrl($scope, $uibModal, $location, RoomFactory){
+  function RoomsCtrl($scope, $uibModal, $location, $cookies, RoomFactory){
     var roomsCtrl = this;
     
     this.allRooms = RoomFactory.all;
@@ -24,11 +24,24 @@
       
     };
     
+    this.changeUsername = function(){
+      let modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: '/templates/modals/usernameModal.html',
+        controller: 'UsernameModalCtrl as modal',
+        backdrop: 'static'
+      });
+    
+      modalInstance.result.then(function (username) {
+        $cookies.put('blocChatCurrentUser', username);
+      });
+    }
+    
   }
   
   angular
     .module('dialogg')
-    .controller('RoomsCtrl', ['$scope', '$uibModal', '$location', 'RoomFactory', RoomsCtrl]);
+    .controller('RoomsCtrl', ['$scope', '$uibModal', '$location', '$cookies', 'RoomFactory', RoomsCtrl]);
 
 }());
 
