@@ -2,6 +2,8 @@
   Room in Template: {{roomCtrl.id}}
   
   <h3>Messages</h3>
-  {{ messages }}
+  <ul>
+    <li ng-repeat="message in roomCtrl.messages">{{message.content}}</li>
+  </ul>
   
 </div>

@@ -4,10 +4,7 @@
     
     ctrl.id = $routeParams.id;
     
-    $scope.$watch('ctrl.id', function(data){
-      console.log('changed route');
-      $scope.messages = RoomFactory.listMessages();
-    });
+    ctrl.messages = RoomFactory.listMessages(ctrl.id);
     
   }
   
