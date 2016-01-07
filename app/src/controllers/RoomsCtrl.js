@@ -24,10 +24,6 @@
       
     };
     
-    this.changeRoom = function(roomId){
-      $location.path('/room/' + roomId);
-    };
-    
   }
   
   angular

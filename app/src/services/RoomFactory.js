@@ -7,8 +7,18 @@
     
     return {
       all: rooms,
-      createRoom: function(room){
-        rooms.$add({name: room});
+      
+      createRoom: function(roomId){
+        rooms.$add({name: roomId});
+      },
+      
+      listMessages: function(roomId){
+        let data = firebaseRef
+          .child('messages')
+          .orderByChild('roomId')
+          .equalTo(roomId);
+          
+        return $firebaseArray(data);
       }
     }
         

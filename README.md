@@ -10,9 +10,11 @@ Skeleton for starting a new Angular or Node app. Can be adapted for other JS app
 ## Usage
 
 * `gulp` - default task is `gulp watch`
-* `gulp watch` - compiles for dev, runs server at localhost:3000 incl. livereload
+* `gulp watch` - compiles to view in dev
 * `gulp build` - builds necessary files for /app/dist
 * `gulp build-run` - builds for dist and runs server at dist to test production version
+
+* `npm start` - run this as a second process after gulp to have a lite-server with livereload active
 
 ## How to build your app
 

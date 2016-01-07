@@ -1,5 +1,6 @@
 (function(){
   function MainCtrl($scope, $routeParams){
+    var ctrl = this;
     
     $scope.params = $routeParams;
     
