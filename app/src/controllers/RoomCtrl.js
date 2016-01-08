@@ -2,8 +2,18 @@
   function RoomCtrl($scope, $routeParams, $timeout, RoomFactory){
     
     $scope.id = $routeParams.id;
-    $scope.name = RoomFactory.all.$getRecord($scope.id).name;
-    $scope.messages = RoomFactory.listMessages($scope.id);
+
+    if ($scope.id){
+      RoomFactory.all.$loaded()
+        .then(function(rooms){
+          $scope.name = rooms.$getRecord($scope.id).name;
+          $scope.messages = RoomFactory.listMessages($scope.id);
+        })
+        .catch(function(err){
+          $scope.name = "(click again!)";
+        });
+
+    }
     
   }
   
