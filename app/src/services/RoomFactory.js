@@ -12,6 +12,11 @@
         rooms.$add({name: roomId});
       },
       
+      deleteRoom: function(roomId){
+        let room = rooms.$getRecord(roomId);
+        rooms.$remove(room);
+      },
+      
       listMessages: function(roomId=""){
         return $firebaseArray(firebaseRef.child('messages').orderByChild('roomId').equalTo(roomId));
       }

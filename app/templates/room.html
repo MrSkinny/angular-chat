@@ -1,9 +1,9 @@
-<div ng-if="roomCtrl.id">
-  Room in Template: {{roomCtrl.id}}
+<div ng-if="id">
+  Room in Template: {{id}}
   
-  <h3>Messages</h3>
+  <h3>{{name}}</h3>
   <ul class="messages">
-    <li ng-repeat="message in roomCtrl.messages"><strong>{{message.username}}</strong> [{{message.sentAt | time}}]: {{message.content}}</li>
+    <li ng-repeat="message in messages"><strong>{{message.username}}</strong> [{{message.sentAt | time}}]: {{message.content}}</li>
   </ul>
   
 </div>

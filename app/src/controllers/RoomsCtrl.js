@@ -8,6 +8,10 @@
       RoomFactory.createRoom(room);
     };
     
+    this.deleteRoom = function(room){
+      RoomFactory.deleteRoom(room);
+    };
+    
     this.openModal = function (size) {
       console.log('clicked');
 

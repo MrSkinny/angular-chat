@@ -11,6 +11,7 @@
   <div ng-repeat="room in roomsCtrl.allRooms">
     <div class="list-group-item">
       <a ng-href="#/room/{{room.$id}}">{{room.name}}</a>
+      <i class="pointer" ng-click="roomsCtrl.deleteRoom(room.$id)" style="float:right">X</i>
     </div>
   </div>
 </div>

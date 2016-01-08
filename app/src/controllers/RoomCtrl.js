@@ -1,16 +1,15 @@
 (function(){
-  function RoomCtrl($scope, $routeParams, RoomFactory){
-    var ctrl = this;
+  function RoomCtrl($scope, $routeParams, $timeout, RoomFactory){
     
-    ctrl.id = $routeParams.id;
-    
-    ctrl.messages = RoomFactory.listMessages(ctrl.id);
+    $scope.id = $routeParams.id;
+    $scope.name = RoomFactory.all.$getRecord($scope.id).name;
+    $scope.messages = RoomFactory.listMessages($scope.id);
     
   }
   
   angular
     .module('dialogg')
-    .controller('RoomCtrl', ['$scope', '$routeParams', 'RoomFactory', RoomCtrl]);
+    .controller('RoomCtrl', ['$scope', '$routeParams', '$timeout', 'RoomFactory', RoomCtrl]);
 
 }());
 
