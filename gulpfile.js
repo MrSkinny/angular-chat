@@ -10,6 +10,7 @@ var sass = require('gulp-sass');
 var babel = require('gulp-babel');
 var htmlreplace = require('gulp-html-replace');
 var rename = require('gulp-rename');
+var shell = require('gulp-shell');
 
 // file paths
 var DIST_PATH = 'app/dist';
@@ -23,7 +24,9 @@ gulp.task('html', function(){
   gulp.src('app/index.html')
     .pipe(htmlreplace({
       'css': 'styles.css',
-      'lib-js-angular': '/lib/angular-1.4.8.min.js',
+      'lib-js-angular': 'lib/angular-1.4.8.min.js',
+      'lib-js-angular-cookies': 'lib/angular-cookies-1.4.8.min.js',
+      'lib-js-ui-bootstrap': 'lib/ui-bootstrap-tpls-0.14.3.min.js',
       'app-js': 'app.js'
     }))
     .pipe(gulp.dest('app/dist'));
@@ -101,6 +104,13 @@ gulp.task('images', function(){
     .pipe(gulp.dest('app/dist/images'));
 });
 
+// Templates
+gulp.task('templates', function(){
+  console.log('Starting template task');
+  gulp.src('app/templates/**/*.html')
+    .pipe(gulp.dest('app/dist/templates'));
+});
+
 // WATCH
 gulp.task('watch', function(){
   console.log('Starting watch task');
@@ -131,14 +141,19 @@ gulp.task('build', function(){
   gulp.start('styles');
   gulp.start('images');
   gulp.start('prod-scripts');
+  gulp.start('templates');
 });
 
 // Build and Run
 gulp.task('build-run', function(){
   console.log('Starting build and run prod');
   gulp.start('build');
-  require('./server.js')('./app/dist');
+  gulp.start('start-server');
 });
+
+gulp.task('start-server', shell.task([
+  "lite-server --baseDir './app/dist'"
+]));
 
 // DEFAULT
 gulp.task('default', function(){

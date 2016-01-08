@@ -3,12 +3,12 @@
     
     $routeProvider
       .when('/room/:id', {
-        templateUrl: '/templates/main.html',
+        templateUrl: 'templates/main.html',
         controller: 'MainCtrl as main'
       })
       
       .when('/', {
-        templateUrl: '/templates/main.html',
+        templateUrl: 'templates/main.html',
         controller: 'MainCtrl as main'
       })
       
@@ -20,17 +20,17 @@
   
   function run($cookies, $uibModal){
     
-    if (!$cookies.get('blocChatCurrentUser')) {
+    if (!$cookies.get('currentUser')) {
 
       let modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: '/templates/modals/usernameModal.html',
+        templateUrl: 'templates/modals/usernameModal.html',
         controller: 'UsernameModalCtrl as modal',
         backdrop: 'static'
       });
     
       modalInstance.result.then(function (username) {
-        $cookies.put('blocChatCurrentUser', username);
+        $cookies.put('currentUser', username);
       });
     }
     

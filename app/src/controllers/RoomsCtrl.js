@@ -17,7 +17,7 @@
 
       let modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: '/templates/modals/roomModal.html',
+        templateUrl: 'templates/modals/roomModal.html',
         controller: 'RoomModalCtrl as roomModal',
         size: size
       });
@@ -31,13 +31,13 @@
     this.changeUsername = function(){
       let modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: '/templates/modals/usernameModal.html',
+        templateUrl: 'templates/modals/usernameModal.html',
         controller: 'UsernameModalCtrl as modal',
         backdrop: 'static'
       });
     
       modalInstance.result.then(function (username) {
-        $cookies.put('blocChatCurrentUser', username);
+        $cookies.put('currentUser', username);
       });
     }
     

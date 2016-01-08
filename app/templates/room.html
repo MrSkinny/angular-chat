@@ -10,4 +10,12 @@
     <li ng-repeat="message in messages"><strong>{{message.username}}</strong> [{{message.sentAt | time}}]: {{message.content}}</li>
   </ul>
   
+  <form name="send-message">
+    <div class="form-group">
+      <input type="text" ng-model="roomCtrl.msgInput" />
+    </div>
+    <button ng-click="send(roomCtrl.msgInput)" class="btn btn-primary" type="submit">Send</button>
+    <button ng-click="deleteAll()" class="btn btn-danger">Delete All Msgs</button>
+  </form>
+  
 </div>
