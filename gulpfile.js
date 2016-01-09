@@ -17,6 +17,7 @@ var DIST_PATH = 'app/dist';
 var DEBUG_SOURCE_PATH = 'app/src/**/*.js';
 var DEBUG_SCRIPTS_PATH = 'app/scripts';
 var HTML_PATHS = ['app/index.html', 'app/templates/**/*.html'];
+var HTML_PATHS_FOR_LITE_SERVER = "'app/index.html' 'app/templates/**/*.html'";
 var STYLES_PATH = 'app/css/**/*.css';
 
 // HTML - asset pipeline!
@@ -159,7 +160,7 @@ gulp.task('start-prod-server', shell.task([
 ]));
 
 gulp.task('start-dev-server', shell.task([
-  "lite-server --baseDir './app'"
+  "lite-server --baseDir './app' --files " + HTML_PATHS_FOR_LITE_SERVER
 ]));
 
 // DEFAULT
