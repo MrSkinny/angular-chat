@@ -116,9 +116,8 @@ gulp.task('watch', function(){
   console.log('Starting watch task');
   gulp.start('styles');
   gulp.start('debug-scripts');
+  setTimeout(()=>{ gulp.start('start-dev-server') }, 3000);
 
-  // require('./server.js')();
-  // livereload.listen({port: 35729, host: 'localhost'});
 
   gulp.watch(DEBUG_SOURCE_PATH, ['debug-scripts', 'prod-scripts']);
   gulp.watch('app/scss/**/*.scss', ['styles']);
@@ -126,6 +125,10 @@ gulp.task('watch', function(){
   //   gulp.src(HTML_PATHS).pipe(livereload());
   // });
 });
+
+  // Old server
+  // require('./server.js')();
+  // livereload.listen({port: 35729, host: 'localhost'});
 
 // Copy images
 gulp.task('copy-images', function(){
@@ -148,11 +151,15 @@ gulp.task('build', function(){
 gulp.task('build-run', function(){
   console.log('Starting build and run prod');
   gulp.start('build');
-  gulp.start('start-server');
+  gulp.start('start-prod-server');
 });
 
-gulp.task('start-server', shell.task([
+gulp.task('start-prod-server', shell.task([
   "lite-server --baseDir './app/dist'"
+]));
+
+gulp.task('start-dev-server', shell.task([
+  "lite-server --baseDir './app'"
 ]));
 
 // DEFAULT
