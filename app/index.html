@@ -16,7 +16,10 @@
 
 <body>
   <navbar>
-    <a href="#/">Rooms</a>
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="#/">Rooms</a></li>
+      <li role="presentation"><a href="#/users">Users</a></li>
+    </ul>
   </navbar>
   <div ng-view></div>
   
@@ -47,6 +50,7 @@
   <script src="/scripts/controllers/MainCtrl.js"></script>
   <script src="/scripts/controllers/RoomsListCtrl.js"></script>
   <script src="/scripts/controllers/RoomCtrl.js"></script>
+  <script src="/scripts/controllers/UsersCtrl.js"></script>
   <script src="/scripts/controllers/modals/RoomModalCtrl.js"></script>
   <script src="/scripts/controllers/modals/UsernameModalCtrl.js"></script>
   
@@ -58,6 +62,7 @@
   <!-- services -->
   <script src="/scripts/services/RoomFactory.js"></script>
   <script src="/scripts/services/Messages.js"></script>
+  <script src="/scripts/services/Users.js"></script>
   <!-- endbuild -->
 
 </body>

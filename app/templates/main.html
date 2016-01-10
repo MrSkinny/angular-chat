@@ -1,13 +1,17 @@
 <div class="row">
+    <p>
+      {{ params }}
+      Path: {{ main.path }}
+    </p>
+</div>
+
+<div class="row">
   <div class="col-md-3 col-xs-3">
     <div ng-include="'templates/roomsList.html'" ng-controller="RoomsListCtrl as roomsList">
     </div>
   </div>
   
   <div class="col-md-9 col-xs-9">
-    <p>
-      {{ params }}
-    </p>
       
     <div ng-include="'templates/room.html'" ng-controller="RoomCtrl as roomCtrl"></div>
   </div>

@@ -7,6 +7,16 @@
         controller: 'MainCtrl as main'
       })
       
+      .when('/users', {
+        templateUrl: 'templates/users/index.html',
+        controller: 'UsersCtrl as users'
+      })
+      
+      .when('/users/new', {
+        templateUrl: 'templates/users/new.html',
+        controller: 'UsersCtrl as users'
+      })
+      
       .when('/', {
         templateUrl: 'templates/main.html',
         controller: 'MainCtrl as main'
