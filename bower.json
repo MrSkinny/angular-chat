@@ -1,0 +1,27 @@
+{
+  "name": "gulp-angular-starter",
+  "description": "Gulp Angular Starter",
+  "main": "app.js",
+  "authors": [
+    "Rich Greenhill <rgnet1@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MrSkinny/angular-chat",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-notify": "~0.2.0"
+  },
+  "overrides": {
+    "bootstrap-notify": {
+      "main": "**/*.*"
+    }
+  }
+}

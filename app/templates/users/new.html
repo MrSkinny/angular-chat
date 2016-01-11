@@ -4,17 +4,27 @@
   </div>
   
   <div class="col-md-9">
-    <form>
-      <div class="form-group">
-        <label for="newUserEmail">Email: </label>
-        <input name="newUserEmail" type="email" ng-model="users.newUserEmail" />
+    <form name="createUserForm" class="create-user-form" novalidate>
+      <div class="form-group" ng-class="{'has-success' : createUserForm.newUserEmail.$valid}">
+        <label class="control-label" for="newUserEmail">Email: </label>
+        <input required class="form-control" name="newUserEmail" id="newUserEmail" type="email" ng-model="users.newUserEmail" />
+        <div ng-show="createUserForm.newUserEmail.$error.email">Must be valid email!</div>
       </div>
-      <div class="form-group">
-        <label for="newUserPw">Password: </label>
-        <input name="newUserPw" type="password" ng-model="users.newUserPw" />
+      <div class="form-group" ng-class="{'has-success' : createUserForm.newUserPw.$valid}">
+        <label class="control-label" for="newUserPw">Password: </label>
+        <input required minlength="6" class="form-control" name="newUserPw" id="newUserPw" type="password" ng-model="users.newUserPw" />
+        <div ng-show="createUserForm.newUserPw.$error.minlength">Must be at least 6 chars!</div>
       </div>
-      <button type="submit" class="btn btn-success" ng-click="users.createUser()">Create</button>
+      <button type="submit" ng-disabled="createUserForm.$invalid" class="btn btn-success" ng-click="users.createUser()">Create</button>
     </form>
   </div>
 
 </div>
+
+<!--
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputSuccess2">Input with success</label>
+  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="inputSuccess2Status" class="sr-only">(success)</span>
+</div>-->

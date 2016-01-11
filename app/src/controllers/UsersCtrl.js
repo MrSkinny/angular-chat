@@ -12,6 +12,12 @@
         .catch((err)=>{ console.log(err) });
     };
     
+    ctrl.signIn = function(email,pw){
+      Users.signIn(email, pw)
+        .then()
+        .catch();
+    }
+    
   }
   
   angular

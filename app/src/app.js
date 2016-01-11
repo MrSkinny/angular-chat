@@ -17,6 +17,11 @@
         controller: 'UsersCtrl as users'
       })
       
+      .when('/users/sign_in', {
+        templateUrl: 'templates/users/sign_in.html',
+        controller: 'UsersCtrl as users'
+      })
+      
       .when('/', {
         templateUrl: 'templates/main.html',
         controller: 'MainCtrl as main'

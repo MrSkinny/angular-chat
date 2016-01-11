@@ -1,0 +1,12 @@
+{
+  "paths": {
+    "VENDOR_CSS": "bower_components/**/*.css",
+    "VENDOR_JS": "bower_components/**/*.js",
+    "DIST_PATH": "app/dist",
+    "DEBUG_SOURCE_PATH": "app/src/**/*.js",
+    "DEBUG_SCRIPTS_PATH": "app/scripts",
+    "HTML_PATHS": ["app/index.html", "app/templates/**/*.html"],
+    "HTML_PATHS_FOR_LITE_SERVER": "'app/index.html' 'app/templates/**/*.html'",
+    "STYLES_PATH": "app/css/**/*.css"
+  }
+}
