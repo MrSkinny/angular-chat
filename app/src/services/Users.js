@@ -17,7 +17,17 @@
         }, 
         
         (error, userData) => {
-          error ? reject(error) : resolve(userData.uid);
+          if(error){
+            reject(error)
+          } else {
+            let users = $firebaseArray(firebaseRef.child('users'));
+            users.$add({
+              email: email,
+              password: password,
+              uid: userData.uid
+            }).then(()=> resolve(userData.uid) );
+                        
+          } 
         })
         
       });
