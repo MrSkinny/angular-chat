@@ -5,6 +5,8 @@
 <div ng-if="id">
   Room in Template: {{id}}
   
+  <div class="notifications top-right"></div>
+  
   <h3>{{name}}</h3>
   <ul class="messages">
     <li ng-repeat="message in messages"><strong>{{message.username}}</strong> [{{message.sentAt | time}}]: {{message.content}}</li>
@@ -19,3 +21,4 @@
   </form>
   
 </div>
+
