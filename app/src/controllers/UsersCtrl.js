@@ -14,7 +14,9 @@
     
     ctrl.signIn = function(email,pw){
       Users.signIn(email, pw)
-        .then()
+        .then(() => {
+          Users.
+        })
         .catch();
     }
     

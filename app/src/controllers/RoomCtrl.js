@@ -26,7 +26,7 @@
     $scope.send = function(msg){
       Messages.send({
         content: msg,
-        username: $cookies.get('currentUser'),
+        username: $cookies.get('tempUsername') || $cookies.get('currentUser.username'),
         sentAt: new Date().toString(),
         roomId: $scope.id
       })

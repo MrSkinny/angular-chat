@@ -13,7 +13,8 @@
         <label class="control-label" for="signInPw">Password: </label>
         <input required minlength="6" class="form-control" name="signInPw" id="signInPw" type="password" ng-model="users.pw" />
       </div>
-      <button type="submit" class="btn btn-success" ng-click="users.signInUser(users.email, users.pw)">Log In</button>
+      <button type="submit" class="btn btn-success" ng-click="users.signIn(users.email, users.pw)">Log In</button>
+      {{ main.currentUser }}
     </form>
   </div>
 

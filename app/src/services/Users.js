@@ -1,12 +1,12 @@
 /* global Firebase */
 
 (function(){
-  function Users($firebaseArray, $rootScope){
+  function Users($firebaseArray, $firebaseAuth, $rootScope, $cookies){
     let Users = {};
     
     let firebaseRef = new Firebase('https://brilliant-inferno-6177.firebaseio.com');
     
-    let currentUser = null;
+    let currentUser = {};
     
     Users.createUser = function(email, password){
       return new Promise( (reject,resolve) => {
@@ -40,17 +40,23 @@
           password: pw  
         }, (error, authData) => {
           if (error){
-            currentUser = null;
+            currentUser = {};
             reject(error);
           } else {
-            currentUser = authData;
+            console.log(authData);
+            currentUser.authData = authData;
+            let usersRef = firebaseRef.child('users');
+            let query = usersRef.orderByChild('uid').equalTo(authData.uid);
+            $firebaseArray(query).$loaded().then((data)=>{
+              currentUser.info = data[0];
+            })
           }
         });
         
       });
     };
     
-    Users.currentUser = function(){
+    Users.getCurrentUser = function(){
       return currentUser;
     };
     
@@ -60,7 +66,7 @@
         
   angular
     .module('dialogg')
-    .factory('Users', ['$firebaseArray', '$rootScope', Users]);
+    .factory('Users', ['$firebaseArray', '$firebaseAuth', '$rootScope', '$cookies', Users]);
 
 }());
 

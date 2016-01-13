@@ -37,7 +37,7 @@
       });
     
       modalInstance.result.then(function (username) {
-        $cookies.put('currentUser', username);
+        $cookies.put('tempUsername', username);
       });
     }
     

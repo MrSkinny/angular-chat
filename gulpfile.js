@@ -209,7 +209,7 @@ gulp.task('start-prod-server', shell.task([
 ]));
 
 gulp.task('start-dev-server', shell.task([
-  "lite-server --baseDir './app' --files " + config.paths.HTML_PATHS_FOR_LITE_SERVER
+  "lite-server --baseDir './app' --files './app/index.html' './app/templates/**/*.html' './app/scripts/**/*.js' './app/dist/**/*.css'"
 ]));
 
 // DEFAULT

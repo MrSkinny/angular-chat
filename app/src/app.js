@@ -35,7 +35,7 @@
   
   function run($cookies, $uibModal){
     
-    if (!$cookies.get('currentUser')) {
+    if (!$cookies.get('tempUsername')) {
 
       let modalInstance = $uibModal.open({
         animation: true,
@@ -45,7 +45,7 @@
       });
     
       modalInstance.result.then(function (username) {
-        $cookies.put('currentUser', username);
+        $cookies.put('tempUsername', username);
       });
     }
     
